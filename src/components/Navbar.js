@@ -1,6 +1,6 @@
 import logo from '../logo.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import CardWidget from './CardWidget';
 
 
 const Navbar = () => {
@@ -40,11 +40,8 @@ const Navbar = () => {
                
     
                 <li className="nav-item">
-          {/*         <!-- Button trigger modal --> */}
-                  <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Carrito
-                    <span id="cantidad" className="badge bg-secondary">0</span>
-                  </button>
+          {/*    <!-- Button trigger modal --> */}
+                 <CardWidget></CardWidget>
                 </li>
               </ul>
             </div>
