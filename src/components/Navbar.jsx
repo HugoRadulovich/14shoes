@@ -1,4 +1,4 @@
-import logo from '../logo.svg'
+import logo from '../multimedia/logo.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardWidget from './CardWidget';
 
