@@ -12,9 +12,9 @@ function App() {
    <>
      <Navbar></Navbar>
      <hr></hr>
-   {/*   <ItemListContainer greeting="Hola Mundo" /> */}
+    {/*  <ItemListContainer greeting="Hola Mundo" /> */}
     <ItemDetailContainer></ItemDetailContainer>
-     {/* <ItemCount stock={5} initial={1}></ItemCount> */}
+    {/*  <ItemCount stock={5} initial={1}></ItemCount> */}
    </>
   );
 }

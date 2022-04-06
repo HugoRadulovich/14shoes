@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import customFetch from "../utils/customFetch";
 const { products } = require('../utils/products');
 
-
-
 const ItemListContainer = ({greeting}) => {
     
     const [dato, setDato] = useState({});
@@ -18,7 +16,7 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <>
-            <h3>{greeting}</h3>
+            {/* <h3>{greeting}</h3> */}
             
             <ItemList products={dato}/>
             

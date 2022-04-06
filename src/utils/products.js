@@ -18,21 +18,6 @@ const products = [{"id":1,"nombre":"NIKE X JORDAN ORANGE","precio":150,"genero":
 {"id":18,"nombre":"ADIDAS ULTRA BOOST","precio":65,"genero":"Female","img":require("../multimedia/18.png"),"cantidad ":1}
 ];
 
-/* const promesa = new Promise(function(resolve, reject){
-
-    setTimeout(function(){
-        resolve(products);
-    }, 2000)
-})
-
-function getProducts(){
-    return promesa;
-}
-
-export {
-    getProducts,
-} */
-
 module.exports = {
     products,
 } 

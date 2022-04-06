@@ -5,7 +5,6 @@ const Item = ({ item }) =>{
 
     return (
 
-     
       <div className="col-md-4">
         <div className=" m-3 card w-100">
                 <img src={item.img} className="card-img-top" alt="imagen_del_producto"/>
