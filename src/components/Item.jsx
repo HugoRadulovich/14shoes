@@ -1,12 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-
-
-
-
-export default function Item({ item }){
+const Item = ({ item }) =>{
 
     return (
 
@@ -27,3 +22,5 @@ export default function Item({ item }){
 
     );
 }
+
+export default Item;

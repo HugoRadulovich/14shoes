@@ -4,14 +4,10 @@ export default function ItemList({ products }){
     return(
         <div className="container">
         <div className="row">
-            {
+        {
                 products.map(function(producto){
                     return (
-                       
-                             <Item key={producto.id} item={producto}/>
-                        
-                       
-                        
+                    <Item key={producto.id} item={producto}/>
                     );
                 })
             }

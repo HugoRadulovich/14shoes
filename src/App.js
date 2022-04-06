@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer'
 import ItemCount from './components/ItemCount'
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 
@@ -11,8 +12,9 @@ function App() {
    <>
      <Navbar></Navbar>
      <hr></hr>
-     <ItemListContainer greeting="Hola Mundo" />
-     <ItemCount stock={5} initial={1}></ItemCount>
+   {/*   <ItemListContainer greeting="Hola Mundo" /> */}
+    <ItemDetailContainer></ItemDetailContainer>
+     {/* <ItemCount stock={5} initial={1}></ItemCount> */}
    </>
   );
 }
