@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) =>{
 
@@ -12,7 +12,10 @@ const Item = ({ item }) =>{
                   <h5 className="card-title text-center">{item.nombre}</h5>
                   <p className="card-text">USD$: {item.precio}</p>
                   <div className="d-grid gap-2 col-6 mx-auto">
-                  <button id={item.id} className ='btnCompra btn btn-dark'>Comprar</button>
+                  <Link to={`/item/${item.id}`}>
+                  <button id={item.id} className ='btnCompra btn btn-dark'>Detalles</button>
+                  </Link>
+            
                   </div>
                   
                 </div>

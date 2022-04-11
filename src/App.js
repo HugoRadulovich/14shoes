@@ -1,8 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer'
-import ItemCount from './components/ItemCount'
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 
@@ -10,12 +11,19 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 function App() {
   return (
    <>
-     <Navbar></Navbar>
-     <hr></hr>
-    {/*  <ItemListContainer greeting="Hola Mundo" /> */}
-    <ItemDetailContainer></ItemDetailContainer>
-    {/*  <ItemCount stock={5} initial={1}></ItemCount> */}
-   </>
+
+        <BrowserRouter>
+          <Navbar></Navbar>
+            <Routes>
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/genero/:idCategory' element={<ItemListContainer />} />
+                <Route path='/item/:idItem' element={<ItemDetailContainer />} />
+            </Routes>
+            <Footer></Footer>
+        </BrowserRouter>
+
+    
+  </>
   );
 }
 
