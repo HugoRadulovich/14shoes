@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import customFetch from "../utils/customFetch";
 import ItemDetail from "./ItemDetail";
@@ -12,17 +12,10 @@ const ItemDetailContainer = () => {
         customFetch(2000, products.find(item => item.id === parseInt(idItem)))
             .then(result => setDato(result))
             .catch(err => console.log(err))
+
+            
     }, []);
 
-
-    /* 
-    useEffect(() => {
-        customFetch(2000, products[3])
-            .then(result => setDato(result))
-            .catch(err => console.log(err))
-    }, []);
-    console.log(products[3]) */
-   
    
     return (
         <ItemDetail item={dato} />
