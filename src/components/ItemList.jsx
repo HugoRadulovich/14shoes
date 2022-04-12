@@ -1,10 +1,11 @@
 import Item from './Item';
 import './Spinner.css';
 
+
 export default function ItemList({ products }){
     return(
-        <div className="container">
-        <div className="row">
+        
+        <div className="row row-cols-1 row-cols-md-3 g-4">
         {
               
                     
@@ -18,6 +19,6 @@ export default function ItemList({ products }){
               </div>
         }
         </div>
-        </div>
+        
     );
 };

@@ -7,15 +7,15 @@ import twitter from '../multimedia/twitter.png'
 const Footer = () => {
     return (
         <>
-        <footer className="py-2">
+        <footer className="py-2 m-4">
             <div className="container-fluid">
                 <div className="row">
                     <h4 className="text-center fs-5">Redes sociales</h4>
                     <article className="col-lg-12 mx-auto text-center rounded">
-                        <div className="mt-2">
-                            <img src={whats} alt="whatsapp-icon" height ="50" width="50" />
-                            <img src={twitter} alt="twitter-icon" height ="50" width="50" />
-                            <img src={instagram} alt="instagram-icon" height ="50" width="50" />
+                        <div className="m-2">
+                            <img src={whats} alt="whatsapp-icon" className="m-2" height ="50" width="50" />
+                            <img src={twitter} alt="twitter-icon" className="m-2" height ="50" width="50" />
+                            <img src={instagram} alt="instagram-icon" className="m-2" height ="50" width="50" />
                         </div>
                         <div>
                             <h4 className="fs-5">

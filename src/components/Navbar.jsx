@@ -1,6 +1,6 @@
 import logo from '../multimedia/logo.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css'
+import './Vinculos.css'
 import { Link } from "react-router-dom";
 import CardWidget from './CardWidget';
 
