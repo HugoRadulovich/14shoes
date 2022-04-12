@@ -18,13 +18,6 @@ const Navbar = () => {
                 className="encabezadoLogo w-75"
               />
             </Link>
-           {/*  <a className="navbar-brand" href="./index.html">
-              <img
-                src={logo}
-                alt="logo_de_pagina"
-                className="encabezadoLogo w-75"
-              />
-            </a> */}
             <button
               className="navbar-toggler"
               type="button"
