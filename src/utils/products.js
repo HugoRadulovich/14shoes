@@ -1,7 +1,6 @@
 const products = [
 {
-    "id":1,
-    "nombre":"NIKE X JORDAN ORANGE",
+    "id":1,"nombre":"NIKE X JORDAN ORANGE",
     "precio":150,
     "genero":"Female",
     "categoryId":9,
@@ -33,7 +32,7 @@ const products = [
     "categoryId":6,
     "img":require("../multimedia/4.png"),
     "descripcion":'Virgil Abloh se unio a Nike para desconstruir el Air Jordan 1 High que presentaba el iconico color UNC. La seria Nike X OffWhite Air Jordan 1 atrae una gran cantidad de atencion y se vende al instante.',
-    cantidad:3},
+    "cantidad":3},
 {
     "id":5,"nombre":"NIKE X JORDAN RED",
     "precio":150,

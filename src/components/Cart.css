@@ -1,0 +1,36 @@
+.cartTitulo{
+    display: flex;
+    font-size: 4em;
+    justify-content: center;
+    font-weight: bold
+}
+.cartBtnEliminarTodo{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+    .cartBody{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px
+}
+
+
+.cartImg{
+    width:16rem;
+    height:8rem;
+    display: flex;
+    
+}
+
+.cartText{
+    display:flex;
+    flex-direction: column;
+
+
+}
