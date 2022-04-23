@@ -35,8 +35,36 @@ const CartContextProvider = ({ children }) => {
       
     }
 
+    const calcItems = () => {
+        let cant = CartList.map(item => item.cantidad)
+        return cant.reduce((previousValue, currentValue) => previousValue + currentValue,
+        0)
+    }
+
+    const calcSubTotalItem = (id) => {
+        let index = CartList.map(item => item.id).indexOf(id);
+        return CartList[index].precio * CartList[index].cantidad;
+        
+        
+    }
+
+    const calcSubTotal = () => {
+        let totalPerItem = CartList.map(item => calcSubTotalItem (item.id));
+        return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue)
+        console.log('hola',totalPerItem)
+    }
+
+    const calcImpuestos = () => {
+        return calcSubTotal() * 0.21;
+    }
+
+    const calcTotal = () => {
+        return calcSubTotal() * 1.21;
+        
+    }
+
     return(
-        <CartContext.Provider value={{CartList, addToCart, removeList, deleteItem}}>
+        <CartContext.Provider value={{CartList, addToCart, removeList, deleteItem,calcItems,calcSubTotalItem,calcSubTotal,calcImpuestos,calcTotal}}>
             {children}
         </CartContext.Provider>
     )

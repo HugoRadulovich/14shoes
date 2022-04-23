@@ -12,6 +12,8 @@ const Cart = () => {
         <div className="cartBtnEliminarTodo">
         <button onClick={test.removeList} type="button" className="btn btn-dark">Eliminar Todo</button>
         </div>
+
+        
         
         {
             test.CartList.length > 0 && (
@@ -29,6 +31,7 @@ const Cart = () => {
                             <p><b>Cantidad: </b>{item.cantidad}</p>
                             <div>
                             <p><b>Precio: </b>USD${item.precio}</p>
+                            <p><b>Subtotal: </b> USD${test.calcSubTotalItem(item.id)}</p>
                             </div>
                             <button onClick={() => test.deleteItem(item.id)} type="button" class="btn btn-dark">Eliminar</button>
                             </div>
@@ -40,6 +43,17 @@ const Cart = () => {
                 
                 
             )
+        }
+
+        {
+            <div className="cartTotal">
+                <hr></hr>
+                <p><b> Subtotal:</b>USD$ {test.calcSubTotal()} </p>
+                <p><b>Impuestos:</b>USD$ {test.calcImpuestos()}</p>
+                <p><b>TOTAL:</b>USD$ {test.calcTotal()}</p>
+                
+                <button type="button" className="btn btn-dark">FINALIZAR COMPRA</button>
+            </div>
         }
         </>
         
