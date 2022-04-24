@@ -2,6 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import './Cart.css'
+import { Link } from "react-router-dom";
+import './Vinculos.css'
+
+
+
 
 const Cart = () => {
     const test = useContext(CartContext);
@@ -9,10 +14,28 @@ const Cart = () => {
     return(
         <>
         <p className="cartTitulo">Carrito</p>
-        <div className="cartBtnEliminarTodo">
-        <button onClick={test.removeList} type="button" className="btn btn-dark">Eliminar Todo</button>
-        </div>
+       
+       {
 
+            test.CartList.length > 0
+            ?  <>
+                <div className="cartBtnEliminarTodo">
+                <button onClick={test.removeList} type="button" className="btn btn-dark">Eliminar Todo</button>
+                </div>
+               <Link to="/" className="vinculo">
+                <div className="btnSeguirComprando">
+                <button type="button" className="btn btn-dark ">Seguir Comprando</button>
+                </div>
+               </Link>
+                
+               </>
+            : <p>Tu carrito esta vacio</p>
+
+       }
+        
+
+        
+        
         
         
         {
@@ -46,14 +69,17 @@ const Cart = () => {
         }
 
         {
+           test.CartList.length > 0 && (
+               
             <div className="cartTotal">
-                <hr></hr>
-                <p><b> Subtotal:</b>USD$ {test.calcSubTotal()} </p>
-                <p><b>Impuestos:</b>USD$ {test.calcImpuestos()}</p>
-                <p><b>TOTAL:</b>USD$ {test.calcTotal()}</p>
-                
-                <button type="button" className="btn btn-dark">FINALIZAR COMPRA</button>
+            <hr></hr>
+            <p><b> Subtotal:</b>USD$ {test.calcSubTotal()} </p>
+            <p><b>Impuestos:</b>USD$ {test.calcImpuestos()}</p>
+            <p><b>TOTAL:</b>USD$ {test.calcTotal()}</p>
+            <button type="button" className="btn btn-dark">FINALIZAR COMPRA</button>
             </div>
+            
+           )
         }
         </>
         

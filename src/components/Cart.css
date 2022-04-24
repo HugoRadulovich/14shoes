@@ -42,3 +42,12 @@
     margin: 5px;
     padding: 5px;
 }
+
+.btnSeguirComprando{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin: 5px;
+    padding: 5px;
+    
+}
