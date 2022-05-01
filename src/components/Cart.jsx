@@ -4,12 +4,65 @@ import { CartContext } from "./CartContext";
 import './Cart.css'
 import { Link } from "react-router-dom";
 import './Vinculos.css'
-
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
+import Swal from 'sweetalert2'
 
 
 
 const Cart = () => {
     const test = useContext(CartContext);
+
+    const checkout = () => {
+      
+        const itemsDB = test.CartList.map(item => ({
+            id: item.id,
+            nombre: item.nombre,
+            prrecio: item.precio
+          }));
+      
+          test.CartList.forEach(async (item) => {
+            const itemRef = doc(db, "products", item.id);
+            await updateDoc(itemRef, {
+              cantidad: increment(-item.cantidad)
+            });
+          });
+      
+          let order = {
+            buyer: {
+              nombre: "Mauro Lombardo",
+              email: "duki@gmail.com",
+              numero: "123456789"
+            },
+            total: test.calcTotal(),
+            items: itemsDB,
+            date: serverTimestamp()
+          };
+        console.log(order)
+
+
+        const createOrderInFirestore = async () => {
+          
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+          }
+          createOrderInFirestore()
+          .then(result =>  Swal.fire({
+            icon: 'success',
+            title: 'Confirmado',
+            text: 'El pedido '+ result.id + ' ha sido procesado',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: 'black',}
+
+      )
+            )
+          .catch(err => console.log(err));
+            
+          test.removeList();
+    }
+
+    
 
     return(
         <>
@@ -76,7 +129,7 @@ const Cart = () => {
             <p><b> Subtotal:</b>USD$ {test.calcSubTotal()} </p>
             <p><b>Impuestos:</b>USD$ {test.calcImpuestos()}</p>
             <p><b>TOTAL:</b>USD$ {test.calcTotal()}</p>
-            <button type="button" className="btn btn-dark">FINALIZAR COMPRA</button>
+            <button onClick={checkout} type="button" className="btn btn-dark">FINALIZAR COMPRA</button>
             </div>
             
            )

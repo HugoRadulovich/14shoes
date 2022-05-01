@@ -4,16 +4,24 @@ import { useParams } from 'react-router';
 /* import customFetch from "../utils/customFetch";
 const { products } = require('../utils/products'); */
 /* import { firestoreFetch } from '../utils/firestoreFetch'; */
-import {collection, getDocs } from 'firebase/firestore';
+import {collection, getDocs } from 'firebase/firestore';/* 
+import { query, orderBy, where, collection, getDocs } from '@firebase/firestore'; */
 import db from '../utils/firebaseConfig';
 
 const ItemListContainer = () => {
     
     const [dato, setDato] = useState({});
     const { idCategory } = useParams();
+    console.log(idCategory)
 
     useEffect(() => {
       const fetchFromFirestore = async () => {
+        /* let q;
+        if (idCategory) {
+            q = query(collection(db, "products"), where('categoryId', '==', idCategory));
+        } else {
+            q = query(collection(db, "products"), orderBy('name'));
+        } */
           const querySnapshot = await getDocs(collection(db,'products'));
           const dataFromFirestore = querySnapshot.docs.map(document => ({
             id: document.id,
