@@ -1,4 +1,3 @@
-import logo from '../logo.png'
 const Body = () => {
     return(
         <>
