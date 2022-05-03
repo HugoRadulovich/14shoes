@@ -38,7 +38,7 @@ const Cart = () => {
             items: itemsDB,
             date: serverTimestamp()
           };
-        console.log(order)
+        
 
 
         const createOrderInFirestore = async () => {
@@ -82,7 +82,8 @@ const Cart = () => {
                </Link>
                 
                </>
-            : <p>Tu carrito esta vacio</p>
+               
+            : <div className="carritoVacio"><p>Tu carrito esta vacio</p></div>
 
        }
         

@@ -51,7 +51,6 @@ const CartContextProvider = ({ children }) => {
     const calcSubTotal = () => {
         let totalPerItem = CartList.map(item => calcSubTotalItem (item.id));
         return totalPerItem.reduce((previousValue, currentValue) => previousValue + currentValue)
-        console.log('hola',totalPerItem)
     }
 
     const calcImpuestos = () => {

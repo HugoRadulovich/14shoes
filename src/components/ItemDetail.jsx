@@ -4,6 +4,8 @@ import ItemCount from './ItemCount';
 import Checkout  from './Checkout'
 import './ItemDetail.css';
 import { CartContext } from './CartContext';
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css"
 
 
 const ItemDetail = ({ item }) => {
@@ -12,7 +14,17 @@ const ItemDetail = ({ item }) => {
     const tes = useContext(CartContext);
 
     const onAdd = (cantidad) => {
-        alert("Usted selecciono " + cantidad + " pares.");
+        Toastify({
+
+            text: `Se agrego ${cantidad} al carrito`,
+            
+            duration: 3000,
+            style: {
+                    background: "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(127,129,130,1) 100%)"
+            },
+            
+            }).showToast()
+        
         setItemCount(cantidad);
         console.log(item)
         tes.addToCart(item,cantidad);
