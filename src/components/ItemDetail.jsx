@@ -13,7 +13,7 @@ const ItemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
     const tes = useContext(CartContext);
 
-    const onAdd = (cantidad) => {
+   /*  const onAdd = (cantidad) => {
         Toastify({
 
             text: `Se agrego ${cantidad} al carrito`,
@@ -30,7 +30,7 @@ const ItemDetail = ({ item }) => {
         
         
     }
-
+ */
 
     return (
         <>
