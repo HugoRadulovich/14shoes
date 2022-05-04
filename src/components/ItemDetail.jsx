@@ -26,7 +26,6 @@ const ItemDetail = ({ item }) => {
             }).showToast()
         
         setItemCount(cantidad);
-        console.log(item)
         tes.addToCart(item,cantidad);
         
         
