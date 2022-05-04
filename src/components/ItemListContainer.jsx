@@ -1,6 +1,12 @@
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+<<<<<<< HEAD
+=======
+/* import customFetch from "../utils/customFetch";
+const { products } = require('../utils/products'); */
+/* import { firestoreFetch } from '../utils/firestoreFetch'; */
+>>>>>>> 6c51417d5872e8380a35c8cfe275c891531f31dd
 import {collection, getDocs } from 'firebase/firestore';
 import { query, orderBy, where} from '@firebase/firestore'; 
 import db from '../utils/firebaseConfig';
