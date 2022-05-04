@@ -2,7 +2,7 @@ import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import {collection, getDocs } from 'firebase/firestore';
-import { query, orderBy, where} from '@firebase/firestore'; 
+import { query,where} from '@firebase/firestore'; 
 import db from '../utils/firebaseConfig';
 
 const ItemListContainer = () => {
